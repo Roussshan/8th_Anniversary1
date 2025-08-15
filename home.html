@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Couple Profiles</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(45deg, #ff8787, #ffe2d6, #ff9898);
+      background-size: 600% 600%;
+      animation: gradientFlow 15s ease infinite;
+      color: #112d4e;
+    }
+
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 50px;
+      padding: 60px 20px;
+    }
+
+    .profile {
+      width: 320px;
+      height: 420px;
+      perspective: 1200px;
+    }
+
+    .profile-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .profile.flip .profile-inner {
+      transform: rotateY(180deg);
+    }
+
+    .profile-front, .profile-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      backface-visibility: hidden;
+      padding: 30px 20px;
+      box-sizing: border-box;
+      background: white;
+    }
+
+    .profile-front {
+      z-index: 2;
+      background: linear-gradient(145deg, #fd60aa, #fffd9e);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .profile-back {
+      transform: rotateY(180deg);
+      background: linear-gradient(145deg, #f4fd6f, #fda6d6);
+    }
+
+    .profile img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 5px solid #ffb0b0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    h2 {
+      margin: 20px 0 10px;
+      color: #5e60ce;
+    }
+
+    p {
+      color: #444;
+      font-size: 0.95rem;
+      margin: 10px 0;
+    }
+
+    .detail-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      background: #ff8fab;
+      color: rgb(192, 36, 36);
+      font-weight: bold;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .detail-button:hover {
+      background: #f3ddb4;
+    }
+ #video-container {
+  margin-top: 50px;
+}
+
+video {
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+  </style>
+</head>
+<body>
+  <nav>
+      <div class="navbar">
+   
+    <button class="logout-btn" onclick="window.location.href='index.html'">Logout</button>
+
+    <div class="nav-items">
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="diary.html">Diary</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="letters.html">Letters</a></li>
+      <li><a href="milestones.html">Milestones</a></li>
+    </ul>
+      </div>
+  </div>
+  </nav>
+  
+  <div class="container">
+    <!-- Profile 1 -->
+    <div class="profile" id="profile1">
+      <div class="profile-inner">
+        <div class="profile-front">
+          <img src="/sub/23.jpg" alt="USS" />
+          <h2>USS</h2>
+          <button class="detail-button" onclick="flipCard('profile1')">Details</button>
+        </div>
+        <div class="profile-back">
+          <h2>USS</h2>
+          <p><strong>I have made this project for you my love, I hope you will like it and you will definitely be happy after seeing it.</strong></p>
+          <p>And without further delay, let's go ahead and get started.....</p>
+          <p>Your love, Your jaan...❤️</p>
+          <button class="detail-button" onclick="flipCard('profile1')">Back</button>
+           <button class="detail-button start-btn" onclick="startProject()">Start</button>
+        </div>
+      </div>
+    </div>
+    
+    <div id="video-container" style="display: none; text-align: center;">
+  <video id="myVideo" width="600" controls autoplay>
+    <source src="/sub/hard work.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<div id="thankyou-message" style="display: none; text-align: center; margin-top: 30px;">
+  <h2 style="color: #d63384;">Thank you for watching! 💖</h2>
+  <p>Made with love... Just for you! 🥰</p>
+</div>
+
+  <script>
+    function flipCard(id) {
+      document.getElementById(id).classList.toggle('flip');
+    }
+  </script>
+ <script>
+function startProject() {
+  // Hide the card
+  document.getElementById('profile1').style.display = 'none';
+
+  // Show the video container
+  const videoContainer = document.getElementById('video-container');
+  videoContainer.style.display = 'block';
+
+  // Get the video element
+  const video = document.getElementById('myVideo');
+
+  // Try to play and request fullscreen
+  video.play().then(() => {
+    if (video.requestFullscreen) {
+      video.requestFullscreen();
+    } else if (video.webkitRequestFullscreen) { /* Safari */
+      video.webkitRequestFullscreen();
+    } else if (video.msRequestFullscreen) { /* IE11 */
+      video.msRequestFullscreen();
+    }
+  }).catch((err) => {
+    console.log("Autoplay or fullscreen failed: ", err);
+  });
+}
+</script>
+
+
+</body>
+</html>

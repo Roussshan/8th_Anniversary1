@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Milestones</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fda6c7, #fccb8f);
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      color: #b23a6e;
+      font-size: 2.5em;
+      font-family: 'Brush Script MT', cursive;
+    }
+
+    .timeline {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 4px;
+      background: #ff8c66;
+      transform: translateX(-50%);
+    }
+
+    .milestone {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      position: relative;
+      width: 45%;
+      margin: 2rem 0;
+      animation: fadeIn 1s ease;
+    }
+
+    .milestone h3 {
+      color: #cc3366;
+      margin-bottom: 0.5rem;
+    }
+
+    .milestone p {
+      font-size: 1rem;
+    }
+
+    .milestone::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      width: 16px;
+      height: 16px;
+      background: #ff8c66;
+      border: 4px solid #fff;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .left {
+      left: 0;
+      text-align: right;
+    }
+
+    .left::after {
+      right: -12px;
+    }
+
+    .right {
+      left: 55%;
+      text-align: left;
+    }
+
+    .right::after {
+      left: -12px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .timeline::before {
+        left: 10px;
+      }
+
+      .milestone {
+        width: 90%;
+        left: 20px !important;
+        text-align: left;
+      }
+
+      .milestone::after {
+        left: -10px !important;
+        right: auto !important;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        font-size: 2rem;
+        padding: 1.5rem;
+      }
+
+      .milestone p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+      <div class="navbar">
+   
+    <button class="logout-btn" onclick="window.location.href='index.html'">Logout</button>
+
+    <div class="nav-items">
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="diary.html">Diary</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="letters.html">Letters</a></li>
+      <li><a href="milestones.html">Milestones</a></li>
+    </ul>
+      </div>
+  </div>
+  </nav>
+
+  <header>Milestones in Our Journey</header>
+
+  <div class="timeline">
+    <div class="milestone left">
+      <h3>16th August 2017 – First Purpose</h3>
+      <p>Today was the day I proposed to her for the first time</p>
+    </div>
+
+    <div class="milestone right">
+      <h3>21th August 2017 – First Responce</h3>
+      <p>She replied to my proposal today.</p>
+    </div>
+
+    <div class="milestone left">
+      <h3>25th january 2018 – Second Purpose</h3>
+      <p>I proposed to her again today</p>
+    </div>
+
+    <div class="milestone right">
+      <h3>2018 to 2019 – Class 7th</h3>
+      <p>Class 7th 'D' was with her in same section whole year, Golden Year</p>
+    </div>
+
+    <div class="milestone left">
+      <h3>5th September 2019  – First Kiss</h3>
+      <p>Today was the first time I kissed her lips</p>
+    </div>
+
+    <div class="milestone right">
+      <h3>3rd October 2020 – First Hug</h3>
+      <p>Today was the day I hugged her for the first time</p>
+    </div>
+  </div>
+
+</body>
+</html>

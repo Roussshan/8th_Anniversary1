@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Love Letters</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffbdd6, #ffe1bd);
+    }
+
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      color: #b23a6e;
+      font-size: 2.5em;
+      font-family: 'Brush Script MT', cursive;
+    }
+
+    .letters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px;
+    }
+
+    .card {
+      background-color: #fff0f5;
+      border-radius: 15px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      padding: 25px;
+      width: 100%;
+      max-width: 500px;
+      animation: fadeIn 1s ease-in;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      color: #d65a8e;
+      margin-bottom: 10px;
+      font-size: 1.5em;
+    }
+
+    .card p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        font-size: 2em;
+      }
+
+      .letters {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+      <div class="navbar">
+   
+    <button class="logout-btn" onclick="window.location.href='index.html'">Logout</button>
+
+    <div class="nav-items">
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="diary.html">Diary</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="letters.html">Letters</a></li>
+      <li><a href="milestones.html">Milestones</a></li>
+    </ul>
+      </div>
+  </div>
+  </nav>
+  
+  <header>This is not a Love letter this is my words, My letters</header>
+
+  <main class="letters">
+    <div class="card">
+      <h3>Teri khubshurti 💌</h3>
+      <p>
+        Teri khubshurti kaise baatye, ek sabad maine kaise jataye, aapne naino se tum mera dil ko chaliya karti ho..... aab iss chaliye dil ka haal tumhe kasie Dikhaye? 
+      </p>
+    </div>
+    <div class="card">
+      <h3>Teri aakhen👁️</h3>
+      <p>
+        Meri aakhen teri aakhho se shikayat karti hai, har ek pal tera pass rahu ye mujhe hidayat karti hai, aab kaise kahu ki kitna ishq hai isse tum se.... Ek pal ke liya bhi dur jao tho bagavat karti hai 
+      </p>
+    </div>
+    <div class="card">
+      <h3>Han meri jaan❤️</h3>
+      <p>
+
+        Har pal Tera pass rahuga, din raat bas tujhe payar karuga aur jab bhi tu mujhe kuch bolegi tho bas payar se han meri jaan kahuga.
+
+      </p>
+    </div>
+    <div class="card">
+      <h3>Tera hooth🫦</h3>
+      <p>
+        Teri hoothon ko jo chuma tha yaad hai ? payar se muskura rahi ho kuch tho baat h... tera haath pakar ke school ke bahar ghumne jana, khair bit gaya wo school ka jamana par aaj bhi kayam hai hamara milna milana, kal bhi tu mera saath thi aaj bhi tu meara saath hai...teri hoothon ko jo chuma tha yaad hai ?
+      </p>
+    </div>
+    <div class="card">
+      <h3>Dil ki baat💕</h3>
+      <p>
+       Dil ki baat suno na, pass mera raho na, roj tho bolti rehati ho aaj thora khamosh raho na.. suno na mera dil ky khe raha hai, har pal bas tujhe yaad kar ke jee raha hai.. zara dil ke dard ko bhagao na pass aa kar mujhe gale se lagao na, aab kitna dur jao gi meri jaan, aab bas mujh main thehar jao na....
+      </p>
+    </div>
+    
+  </main>
+</body>
+</html>
