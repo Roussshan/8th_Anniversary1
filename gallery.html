@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Georgia', serif;
+      background: linear-gradient(-45deg, #ffb3b3, #ffafaf, #fee2ff, #ffa7a7);
+      background-size: 400% 400%;
+      animation: backgroundAnimation 15s ease infinite;
+      overflow-x: hidden;
+    }
+
+    @keyframes backgroundAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    
+    header {
+      text-align: center;
+      font-size: 2.5rem;
+      padding: 2rem 1rem;
+      background: linear-gradient(to right, #ffdfc4, #ffcad4);
+      color: #d6336c;
+      font-family: 'Brush Script MT', cursive;
+    }
+
+    .gallery-container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      border: 8px solid transparent;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      transition: transform 0.4s, border-color 0.4s;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+      border-color: #ffa9d4;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease-in-out;
+      border-radius: 8px;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 600px) {
+      header {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+      <div class="navbar">
+   
+    <button class="logout-btn" onclick="window.location.href='index.html'">Logout</button>
+
+    <div class="nav-items">
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="diary.html">Diary</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="letters.html">Letters</a></li>
+      <li><a href="milestones.html">Milestones</a></li>
+    </ul>
+      </div>
+  </div>
+  </nav>
+  <header>Our Sweet Memories</header>
+
+  <div class="gallery-container">
+    <div class="gallery-item">
+      <img src="1.jpg" alt="Memory 1">
+    </div>
+    <div class="gallery-item">
+      <img src="uss.jpg" alt="Memory 2">
+    </div>
+    <div class="gallery-item">
+      <img src="2.jpg" alt="Memory 3">
+    </div>
+    <div class="gallery-item">
+      <img src="3.jpg" alt="Memory 4">
+    </div>
+    <div class="gallery-item">
+      <img src="4.jpg" alt="Memory 5">
+    </div>
+    <div class="gallery-item">
+      <img src="5.jpg" alt="Memory 6">
+    </div>
+    <div class="gallery-item">
+      <img src="6.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="7.jpg" alt="Memory 9">
+    </div>
+    <div class="gallery-item">
+      <img src="8.jpg" alt="Memory 10">
+    </div>
+    <div class="gallery-item">
+      <img src="9.jpg" alt="Memory 11">
+    </div>
+    <div class="gallery-item">
+      <img src="10.jpg" alt="Memory 12">
+    </div>
+    <div class="gallery-item">
+      <img src="11.jpg" alt="Memory 13">
+    </div>
+    <div class="gallery-item">
+      <img src="12.jpg" alt="Memory 14">
+    </div>
+    <div class="gallery-item">
+      <img src="13.jpg" alt="Memory 15">
+    </div>
+    <div class="gallery-item">
+      <img src="14.jpg" alt="Memory 16">
+    </div>
+    <div class="gallery-item">
+      <img src="15.jpg" alt="Memory 17">
+    </div>
+    <div class="gallery-item">
+      <img src="16.jpg" alt="Memory 18">
+    </div>
+    <div class="gallery-item">
+      <img src="32.jpg" alt="Memory 19">
+    </div>
+    <div class="gallery-item">
+      <img src="33.jpg" alt="Memory 20">
+    </div>
+    <div class="gallery-item">
+      <img src="19.jpg" alt="Memory 21">
+    </div>
+    <div class="gallery-item">
+      <img src="34.jpg" alt="Memory 22">
+    </div>
+    <div class="gallery-item">
+      <img src="21.jpg" alt="Memory 23">
+    </div>
+    <div class="gallery-item">
+      <img src="22.jpg" alt="Memory 24">
+    </div>
+    <div class="gallery-item">
+      <img src="23.jpg" alt="Memory 25">
+    </div>
+    <div class="gallery-item">
+      <img src="24.jpg" alt="Memory 26">
+    </div>
+    <div class="gallery-item">
+      <img src="25.jpg" alt="Memory 27">
+    </div>
+    <div class="gallery-item">
+      <img src="26.jpg" alt="Memory 28">
+    </div>
+    <div class="gallery-item">
+      <img src="27.jpg" alt="Memory 29">
+    </div>
+    <div class="gallery-item">
+      <img src="28.jpg" alt="Memory 30">
+    </div>
+    <div class="gallery-item">
+      <img src="29.jpg" alt="Memory 31">
+    </div>
+    <div class="gallery-item">
+      <img src="30.jpg" alt="Memory 32">
+    </div>
+    <div class="gallery-item">
+      <img src="31.jpg" alt="Memory 33">
+    </div>
+    <div class="gallery-item">
+      <img src="34.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="35.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="36.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="37.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="38.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="39.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="40.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="41.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="42.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="43.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="44.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="45.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="46.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="47.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="48.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="49.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="50.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="51.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="52.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="53.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="54.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="55.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="56.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="57.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="58.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="59.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="60.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="61.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="62.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="63.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="64.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="65.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="66.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="67.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="68.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="69.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="70.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="71.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="72.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="73.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="74.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="75.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="76.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="77.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="78.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="79.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="80.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="81.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="82.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="83.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="84.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="85.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="86.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="87.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="88.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="89.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="90.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="91.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="92.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="93.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="94.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="95.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="96.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="67.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="98.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="99.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="100.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="101.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="102.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="103.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="104.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="105.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="106.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="107.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="108.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="109.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="110.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="111.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="112.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="113.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="114.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="115.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="116.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="117.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="118.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="119.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="120.jpg" alt="Memory 7">
+    </div>
+    <div class="gallery-item">
+      <img src="121.jpg" alt="Memory 4">
+    </div>
+    <div class="gallery-item">
+      <img src="122.jpg" alt="Memory 4">
+    </div>
+    <div class="gallery-item">
+      <img src="123.jpg" alt="Memory 4">
+    </div>
+    <div class="gallery-item">
+      <img src="124.jpg" alt="Memory 4">
+    </div>
+    <div class="gallery-item">
+      <img src="125.jpg" alt="Memory 4">
+    </div>
+    <div class="gallery-item">
+      <img src="126.jpg" alt="Memory 4">
+    </div>
+    <div class="gallery-item">
+      <img src="127.jpg" alt="Memory 4">
+    </div>
+    <div class="gallery-item">
+      <img src="128.jpg" alt="Memory 4">
+    </div>
+    <div class="gallery-item">
+      <img src="129.jpg" alt="Memory 4">
+    </div>
+    <div class="gallery-item">
+      <img src="130.jpg" alt="Memory 4">
+    </div>
+    <div class="gallery-item">
+      <img src="131.jpg" alt="Memory 4">
+    </div>
+    <div class="gallery-item">
+      <img src="132.jpg" alt="Memory 4">
+    </div>
+    <div class="gallery-item">
+      <img src="133.jpg" alt="Memory 4">
+    </div>
+    <div class="gallery-item">
+      <img src="134.jpg" alt="Memory 4">
+    </div>
+    <div class="gallery-item">
+      <img src="135.jpg" alt="Memory 4">
+    </div>
+    <div class="gallery-item">
+      <img src="136.jpg" alt="Memory 4">
+    </div>
+    <div class="gallery-item">
+      <img src="137.jpg" alt="Memory 4">
+    </div>
+    <div class="gallery-item">
+      <img src="138.jpg" alt="Memory 4">
+    </div>
+    <div class="gallery-item">
+      <img src="139.jpg" alt="Memory 4">
+    </div>
+    <div class="gallery-item">
+      <img src="140.jpg" alt="Memory 4">
+    </div>
+     <div class="gallery-item">
+      <img src="141.jpg" alt="Memory 4">
+    </div>
+     <div class="gallery-item">
+      <img src="142.jpg" alt="Memory 4">
+    </div>
+     <div class="gallery-item">
+      <img src="143.jpg" alt="Memory 4">
+    </div>
+     
+  
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diary Home</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+     body {
+      font-family: 'Georgia', serif;
+      background: linear-gradient(-45deg, #fefae0, #fde2e2, #f3d1f4, #d0f4de);
+      background-size: 400% 400%;
+      animation: backgroundAnimation 15s ease infinite;
+      overflow-x: hidden;
+    }
+
+    @keyframes backgroundAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+        .hanging-image {
+      position: absolute;
+      width: 100px;
+      border: 4px solid #ffe3e3;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      animation: swing 5s infinite ease-in-out;
+    }
+
+    .hanging-left {
+      left: 20px;
+    }
+
+    .hanging-right {
+      right: 20px;
+    }
+
+    .img1 { top: 10%; animation-delay: 0s; }
+    .img2 { top: 30%; animation-delay: 1s; }
+    .img3 { top: 50%; animation-delay: 2s; }
+    .img4 { top: 70%; animation-delay: 3s; }
+
+    @keyframes swing {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(5deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    .container {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 1200px;
+    }
+
+    .book {
+      width: 80%;
+      max-width: 800px;
+      height: 95vh;
+      background: repeating-linear-gradient(
+        0deg,
+        #fffaf0 0px,
+        #fffaf0 24px,
+        #f8f3e7 25px,
+        #f8e7f5 26px
+      );
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      position: relative;
+      transition: transform 1s;
+      padding: 2rem;
+      transform-style: preserve-3d;
+    }
+
+    .page {
+      display: none;
+      animation: fadeIn 1s ease;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: rotateY(90deg);
+      }
+      to {
+        opacity: 1;
+        transform: rotateY(0);
+      }
+    }
+
+    .book h1 {
+      font-family: 'Brush Script MT', cursive;
+      color: #b44c4c;
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .book p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #4b2e2e;
+      text-align: justify;
+      margin-bottom: 1.5rem;
+    }
+
+    .next-btn {
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      background: #f7b7a3;
+      color: #611c1c;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .next-btn:hover {
+      background: #f49b8a;
+    }
+
+    @media (max-width: 600px) {
+      .book {
+        padding: 1rem;
+        height: 95vh;
+      }
+
+      .book h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <img src="143.JPG" class="hanging-image hanging-left img1" />
+  <img src="67.jpg" class="hanging-image hanging-left img2" />
+  <img src="139.jpg" class="hanging-image hanging-left img3" />
+  <img src="129.jpg" class="hanging-image hanging-left img4" />
+  <img src="46.jpg" class="hanging-image hanging-right img1" />
+  <img src="99.jpg" class="hanging-image hanging-right img2" />
+  <img src="82.jpg" class="hanging-image hanging-right img3" />
+  <img src="77.jpg" class="hanging-image hanging-right img4" />
+
+  <nav>
+      <div class="navbar">
+   
+    <button class="logout-btn" onclick="window.location.href='index.html'">Logout</button>
+
+    <div class="nav-items">
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="diary.html">Diary</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="letters.html">Letters</a></li>
+      <li><a href="milestones.html">Milestones</a></li>
+    </ul>
+      </div>
+  </div>
+  </nav>
+
+  <div class="container">
+    <div class="book" id="book">
+      <div class="page active" id="page1">
+        <h1>This is My story, My life.</h1>
+        <p>
+          Once upon a time about '2016', I am in class '5th' and one day i saw a cute, tall and pretty girl. who is Wandering with her friends in my school corridor and I totally fall in love with her seriously in class '5th' where other children are  busy in studying and playing at that time I falls in love with a girl whose name i didn't even know. Yes it was love at first sight, How can i explain this i Literally don't know... then after i follow her secretly, Gathering some information about her like her name, And where does she come from and etc. Then after a year passed i promoted to class-'6th' This year, everyone's section was changed for the first time then i got some new friends like kunal (my best friend ever till now), shivam Jha, abhishek, manthan and the main guy ayush vats who play the main role in taking my love story forward. One day i usually go to school and Wandering with him (ayush vats) in my school corridor On this day he told me about his girlfriend and asked me if I had a girlfriend? i said 'NO' i dont have any girlfriend After that he asked me, do you like anyone? Then I jokingly told him that there is a girl named Suhani whom I like and he immediately said that she is my girlfriend's best friend and if you like her, I can set you up with her. I didn't think or understand anything and just said yes, then after some day he call me and said be prepared You need to talk to her today during school break. Now after this I am confused whether I should talk to her or not because I have never talked to any unknown girl before this. Then that time came (16th August, 2017) when school was over and I went with my friend Ayush to meet that girl, she was walking in front of uss, Ayush called out to her name Suhani, she turned back and I was standing just behind her and I just said I love you and immediately disappeared from there. Neither did I look at her face properly nor did I talk to her properly nor did I wait for her reply, I just said three words and disappeared.
+        </p>
+      </div>
+      <div class="page" id="page2">
+        <p>
+          Then after that I came to school the next day and asked my friend, brother what happened to that girl? Did she give any reply? So he said no brother, then I told him, friend, please talk to her and find out what happened from her side? He said, it's okay brother, wait, I will find out and then tell you. Then I kept waiting, 3 days passed and after that on the 4th day my friend came to me and said, brother, she has called you and she will reply to you face to face, so meet her tomorrow when school is over. Then after waiting for so long, on the 5th day I went to meet her after school, she was standing outside the main gate of the school, near the ice cream vendor, then I went to her, I did not have the courage to talk to her but still I asked her, "yes, why did you call me?" After that she directly said yes to me, then I said, "what did you say, I did not understand anything", then she said yes from my side, after that a smile came on my face and she left and I ran towards the school cycle stand to take my cycle. What should I tell you after that.... Understand that I had gone crazy in love with her. I used to think about her the whole day. Wat should I tell her anything, I could not understand anything if you thought that I was shy and an introvert, then brother you are completely wrong because I am such a boy who does not think before saying anything to anyone, but I did not know what used to happen after seeing her, I used to become silent just in front of her. From then, I just look at her from a distance, exchange face-to-face smiles, say bye to her after school and then follow her van after he leaves, I did not know why I did all this, nor did she tell me to do all this, I used to do some or the other thing like a crazy person, One month passed doing just this, after that my friend told me, friend, will you just keep saying bye or will you go and talk to her and take your relationship further? Then I said brother, I don't know what should I talk with her and how should I start, I am not able to understand anything, I am trying but don't know, please give me some ideas? After that he told me that it's okay bro, if you can't tell her and if you can't say anything then there's no problem, you can write it down to her, then I said mltb? 
+        </p>
+      </div>
+      <div class="page" id="page3">
+        <p>
+        then he explained to me that brother you should write a letter to her (love letter), write everything in your heart in it and after that go and give it to her, simple and then i exactly do the same thing, '30th September 2017' was a Saturday and on that day there were last 2 classes of CCA in our school and on that day I sat full time in 2 periods of CCA and wrote a letter with great intensity and love and the after when school over I went to her and gave that letter and after that I again disappeared. After that, I came to class next day and I was expecting a reply from her side but maybe she needed some time of her own, then the same sequence continued – smiling at each other everyday, saying bye after school goes off, riding my cycle behind his van, only this was going on and after that '14th November 2017'-(Children's Day) came, how can I forget this day, on that day, she performed a group song on the stage, and I do not know why after seeing her, but I was very happy and was telling everyone that Look, look, my girlfriend is performing on stage. After that I was happy the whole day and when I went home I was thinking that next day I will go to school and try to talk to her and that's all but maybe god did not approve this. Next day I went to college everything was fine but then comes that time which turns my life around in an instant."15th nov 2017 (Wednesday)" The maths class was going on, meanwhile a management staff comes into the class and tells my maths teacher (Anand sir) that Roshan Kumar is being called Pandy sir, till this point it was fine, I was normal but as I came out of the class, I saw that girl about whom this whole story of mine is and when I saw her I came to know that no brother, now my game is over and my story ends here. Then I was totally shocked that what happened, what did I do and why is this girl here after that I was taken down to the reception and after going there it became clear to me that brother, today it is difficult for me to save my life because there were 2-3 school teachers (Rita mam, Pandy sir, Navesh sir, etc) but till now I was not able to know what I had done after all. 
+        </p>
+      </div>
+      <div class="page" id="page4">
+        <p>
+        Then I was scolded thoroughly and then I was shown the letter written by me and was asked whether I had written this letter, I said no earlier and then I recited Suhani's mummy's line. Then I said yes, I have written this letter and I have given this letter to  Suhani. Then after that my mother was called to the school and then the teacher and my mother beat me a lot but I was not sad about the fact that i was beaten by everyone or everyone is saying bad things about me, I was only sad about the fact that Suhani exposed me by lying in front of everyone and she escaped because I had given that letter to her on 30th September and 15 days later on 15th November she came to the school with her mother and told that I had given this letter to her yesterday i.e. on 14th November But I did not tell this to anyone at that time and took all the blame on myself because I did not want anyone to say anything to Suhani .. after all she was my first love. Then after all this I started feeling very sad and depressed, At one time my friends tried to provoke me by saying that brother that girl is not right, she has trapped you and she is not worthy of you. Then the teachers, parents, everybody explained to me that all this is wrong and I should not do all this but only one thing was going on in my mind, after all why did she do this to me, If she wanted to trap me then why did she not do it when I gave her the letter; rather why was it necessary for her to come after so many days and do all this? and if she did not like me then she should have refused when I proposed to her, then why she would have said yes to me? All these things were bothering me. I wanted to know the answer to all these things but I had no answer to this question. Then a few days passed and after that my birthday came, 11th December. That day I had bought a chocolate for her but I was also afraid that if I gave her the chocolate and if like the letter, she again trapped me then what would happen? because of this fear that I did not give her that chocolate. Then after a few days, I went to school early in the morning like every day and was going towards my class after parking my cycle at the cycle stand, then I met Suhani's best friend Devoshree on the way, 
+        </p>
+      </div>
+      <div class="page" id="page5">
+        <p>
+        she stopped me and told me that friend, Suhani has sent me to tell you something. I said okay tell me what do you want to tell me then she told me that you should not have misunderstood Suhani, she did not want to trap you, she had just kept that letter in her bag and by mistake her younger brother took that letter out of her bag and gave it to her mother and after that she had no option, so she lied at home and the whole matter came to you and you got trapped, so for this she has said sorry to you. After hearing all this my mind calmed down a bit, then I took the chocolates that I had bought on my birthday for her, with great courage I gave it to my friend Amrit and said, go brother, give it to her and said my name. After that she took the chocolate and then everyday I would just look at her from a distance, pass a smile, and say bye to her. After that Independence Day "25th Jan 2018 (Thursday)" came and on that day also I was watching her from a distance in the crowd, all of us children were in the school ground, then I met one of my friends there Sundram, I told him everything about what happened to me in the last few months, He did not believe that I did all this because in the eyes of him i was a simple type of boy who would just sit in a corner of the classroom. Then he challenged me in front of everyone that if you have guts then purpose her again here in front of everyone today in the same ground i want too see....At first I was reluctant to do it because I don't wanted to create a scene in front of everyone but he forced me a lot so I said yes. Then when all the programs were over and Atharva house was celebrating his victory, I told Sundram to just go and call her, he went and called Suhani along with everyone, then I proposed to Suhani again in front of everyone and she immediately said yes. After that I was happy again and along with me, she and all my friends were happy. Then after that the exam was held and I went to 7th class and then the section was changed again and we both came in the same section, "7th-D". After that we spent the whole year together, had a lot of fun, participated in everything together, enjoyed it, then in the meantime we started talking on Insta 
+        </p>
+      </div>
+      <div class="page" id="page6">
+        <p>
+        and Insta supported us a lot in getting close to each other. I can't forget that thing of class 7th till my last breath. If I sat down to describe it, then really a whole year would pass by because in every single moment of that time there was something such that remembering it even today a smile comes on my face. Then a whole year passed in this and we reached class 8th and our section changed again. But even after being in separate sections, we both were connected to each other, used to talk on Instagram, we used to meet every day after school, I used to touch her with love and hold her hand every day And on "5th September (Thursday)" I kissed her first time And she was shocked because, she thought I would kiss her on the cheek, but I kissed her on the lips, because I am pro player. After that, this sequence of kisses never stopped and today, after so many years(2923 days, 70,137 hours, 4,208,220 minutes, 252,493,200 seconds), on 16th August 2025, I am with her and I am still kissing her. May this relationship of years never end and may this bond of our love never break thats all..... love you meri jaan❤️❤️❤️
+        </p>
+      </div>
+      <button class="next-btn" onclick="nextPage()">Next ➜</button>
+    </div>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 6;
+
+    function nextPage() {
+      document.getElementById(`page${currentPage}`).classList.remove("active");
+      currentPage = currentPage < totalPages ? currentPage + 1 : 1;
+      document.getElementById(`page${currentPage}`).classList.add("active");
+    }
+  </script>
+
+</body>
+</html>
